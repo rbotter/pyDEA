@@ -1,6 +1,7 @@
 ''' This module contains classes responsible for solving a given
     data instance either through terminal or GUI.
 '''
+#coding=utf-8
 import xlwt
 import datetime
 import os
@@ -375,21 +376,21 @@ class RunMethodGUI(RunMethodBase):
 def derive_returns_to_scale_classification(param_strs, solutions):
     ''' Add a dictionary that describes the DMUs' returns-to-scale classification
         to the solution object. Note that for a given orientation (intput or
-        ouput), the returns-to-scale of a DMU is the same for both the CRS 
-        and the VRS models. See the following algorithm for more detail: 
+        ouput), the returns-to-scale of a DMU is the same for both the CRS
+        and the VRS models. See the following algorithm for more detail:
 
         For a DMUo
             If CRSeff of DMUo  = VRSeff of DMUo then classify DMUo as CRS
             Else
-                If sum of DMUo’s CRS lambdas < 1 then classify DMUo as IRS
+                If sum of DMUo CRS lambdas < 1 then classify DMUo as IRS
                 Else classify DMUo as DRS
         Args:
             param_strs (list of str): list of strings that describe
                     each model.
-            solutions (list of Solution): list of obtained solutions.            
+            solutions (list of Solution): list of obtained solutions.
 
         Returns:
-            RTS_classification (dict of dmu_code (str) to classification (str)): indicate frontier 
+            RTS_classification (dict of dmu_code (str) to classification (str)): indicate frontier
                 for the DMUs.
     '''
 
